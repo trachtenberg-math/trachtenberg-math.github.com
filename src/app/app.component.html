@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-center align-items-center w-100 h-100 flex-column">
+  <p class="main-number" (click)="updateNumber()">{{randomNumber}}</p>
+  <p *ngIf="twoNums" class="secondary-number" (click)="updateNumber()">{{secondNumber}}</p>
+  <div class="d-flex flex-row">
+    <input matInput type="number" [formControl]="min"
+           aria-label="Минимальная граница рандомного числа">
+    <div class="mr-1"></div>
+    <input matInput type="number" [formControl]="max"
+           aria-label="Минимальная граница рандомного числа">
+  </div>
+  <mat-checkbox (change)="twoNums = !twoNums" [checked]="twoNums" class="example-margin">Два числа</mat-checkbox>
+</div>
